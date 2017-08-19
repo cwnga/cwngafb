@@ -77,6 +77,13 @@
       console.log('Successful login for: ' + response.name);
       document.getElementById('status').innerHTML =
         'Thanks for logging in, ' + response.name + '!';
+
+      FB.api('/1050922981708967?fields=access_token', function(response) {
+         console.log('access_token: ');
+		 console.log( response);
+         document.getElementById('access_token').innerHTML = response.access_token;
+      });
+
     });
   }
 </script>
@@ -91,6 +98,7 @@
 </fb:login-button>
 
 <div id="status">
+<div id="access_token">
 </div>
 
 </body>
